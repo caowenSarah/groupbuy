@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="gb2312"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>userservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.userservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>produceservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.produceservlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>wzmtservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.wzmtservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>indentservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.indentservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>orderservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.orderservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>orderitemservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.orderitemservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>talkwithservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.talkwithservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>traderservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.traderservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>collectionservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.collectionservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>giveinforservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.giveinforservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>answerservlet</servlet-name>
+    <servlet-class>org.cw.group.servlet.answerservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowServlet</servlet-name>
+    <servlet-class>ShowServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+  
+   <filter>
+     <filter-name>SetCharacterEncodingFilter</filter-name>
+     <filter-class>org.cw.group.filter.SetCharacterEncodingFilter</filter-class>
+     
+     <init-param>
+          <param-name>encoding</param-name>
+          <param-value>GBK</param-value>
+     </init-param>
+     <init-param>
+          <param-name>ignore</param-name>
+          <param-value>true</param-value>
+     </init-param>
+    
+  </filter>
+  <filter-mapping>
+           <filter-name>SetCharacterEncodingFilter</filter-name>
+           <url-pattern>/*</url-pattern>
+           
+  </filter-mapping>
+  <filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>org.cw.group.filter.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/orderitemservlet</url-pattern>
+	</filter-mapping>
+  
+  
+  <servlet-mapping>
+    <servlet-name>userservlet</servlet-name>
+    <url-pattern>/userservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>produceservlet</servlet-name>
+    <url-pattern>/produceservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>indentservlet</servlet-name>
+    <url-pattern>/indentservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>orderservlet</servlet-name>
+    <url-pattern>/orderservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>wzmtservlet</servlet-name>
+    <url-pattern>/wzmtservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>orderitemservlet</servlet-name>
+    <url-pattern>/orderitemservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>talkwithservlet</servlet-name>
+    <url-pattern>/talkwithservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>traderservlet</servlet-name>
+    <url-pattern>/traderservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>collectionservlet</servlet-name>
+    <url-pattern>/collectionservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>giveinforservlet</servlet-name>
+    <url-pattern>/giveinforservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>answerservlet</servlet-name>
+    <url-pattern>/answerservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowServlet</servlet-name>
+    <url-pattern>/servlet/ShowServlet</url-pattern>
+  </servlet-mapping>
+  <listener>  
+     <listener-class>org.cw.group.listener.MySessionListener</listener-class>
+  </listener>  
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
